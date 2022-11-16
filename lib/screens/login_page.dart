@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -169,7 +171,8 @@ class _LoginPageState extends State<LoginPage> {
                               );
                               Navigator.of(context).pop();
 
-                              Navigator.of(context).pushReplacementNamed('/');
+                              Navigator.of(context)
+                                  .pushReplacementNamed('/', arguments: user);
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
@@ -239,7 +242,8 @@ class _LoginPageState extends State<LoginPage> {
                             behavior: SnackBarBehavior.floating,
                           ),
                         );
-                        Navigator.of(context).pushReplacementNamed('/');
+                        Navigator.of(context)
+                            .pushReplacementNamed('/', arguments: user);
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
@@ -297,7 +301,8 @@ class _LoginPageState extends State<LoginPage> {
                             behavior: SnackBarBehavior.floating,
                           ),
                         );
-                        Navigator.of(context).pushReplacementNamed('/');
+                        Navigator.of(context)
+                            .pushReplacementNamed('/', arguments: user);
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
